@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import "../style/index.scss";
-
+import ReactGA from 'react-ga';
 
 class Movies extends App {
 
@@ -12,6 +12,8 @@ class Movies extends App {
 
         return { appProps }
     }
+
+
 
     render() {
         const { Component, appProps } = this.props;
@@ -40,6 +42,7 @@ class Movies extends App {
                         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                         crossOrigin="anonymous"
                     ></script>
+                    {ReactGA.initialize('UA-154850900-1') && ReactGA.pageview('/')}
                 </Head>
                 <Navbar />
                 <div className="page">
@@ -59,3 +62,4 @@ class Movies extends App {
 }
 
 export default Movies
+
